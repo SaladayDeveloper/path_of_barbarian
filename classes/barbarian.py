@@ -3,7 +3,8 @@ import pygame
 from data.functions import load_image
 
 pygame.init()
-screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+# screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+screen = pygame.display.set_mode((1000, 800))
 info = pygame.display.Info()
 size = width, height = info.current_w, info.current_h
 
@@ -17,9 +18,18 @@ class Barbarian(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = 500
         self.rect.y = 500
-        self.speed = 1
+        self.speed_x = self.speed_y = 0
 
     def update(self):
-        self.rect.x += self.speed
-        if self.rect.x >= width or self.rect.x <= 0:
-            self.speed = -self.speed
+        self.rect.x += self.speed_x
+        self.rect.y += self.speed_y
+
+    def move(self, keys, speed):
+        if keys == pygame.K_a:
+            self.speed_x = -speed
+        if keys == pygame.K_d:
+            self.speed_x = speed
+        if keys == pygame.K_s:
+            self.speed_y = speed
+        if keys == pygame.K_w:
+            self.speed_y = -speed
