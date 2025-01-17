@@ -1,0 +1,40 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map1.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "main.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2
+        },
+        "map1.tmx": {
+            "scale": 0.6115625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 909.1466530403678,
+                "y": 572.30454777721
+            }
+        }
+    },
+    "last.imagePath": "D:/path_of_barbarian/maps",
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": "3",
+    "map.width": 20,
+    "openFiles": [
+        "map1.tmx",
+        "main.tsx"
+    ],
+    "project": "map.tiled-project",
+    "recentFiles": [
+        "main.tsx",
+        "map1.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 1,
+    "tileset.spacing": 1
+}
