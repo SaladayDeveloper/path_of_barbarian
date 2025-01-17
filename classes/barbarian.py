@@ -4,7 +4,7 @@ from data.functions import load_image
 
 pygame.init()
 # screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-screen = pygame.display.set_mode((1000, 800))
+screen = pygame.display.set_mode((400, 400))
 info = pygame.display.Info()
 size = width, height = info.current_w, info.current_h
 

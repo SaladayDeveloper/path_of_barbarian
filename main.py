@@ -1,6 +1,8 @@
 import pygame
+import pytmx
 
 from classes.barbarian import Barbarian, screen, width, height
+from classes.map import Map
 from data.functions import *
 
 running = True
@@ -9,6 +11,7 @@ clock = pygame.time.Clock()
 all_sprites = pygame.sprite.Group()
 main_hero = pygame.sprite.Group()
 barbarian = Barbarian(all_sprites, main_hero)
+map_current = Map('map1.tmx', [30])
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -20,8 +23,9 @@ while running:
             if event.key in [pygame.K_w, pygame.K_s, pygame.K_d, pygame.K_a]:
                 barbarian.move(event.key, 0)
     screen.fill((0, 0, 0))
-    all_sprites.draw(screen)
-    all_sprites.update()
+    map_current.render(screen)
+    main_hero.draw(screen)
+    main_hero.update()
     clock.tick(fps)
     pygame.display.flip()
 pygame.quit()
