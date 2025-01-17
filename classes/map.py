@@ -1,7 +1,7 @@
 import pytmx
+from pygame.sprite import Sprite
 
 MAPS_DIR = 'maps'
-
 
 class Map:
     def __init__(self, file_name, free_tiles):
@@ -11,11 +11,12 @@ class Map:
         self.tile_size = self.map.tilewidth
         self.free_tiles = free_tiles
 
-    def render(self, screen):
+    def render(self, screen, d):
+        dx, dy = d
         for row in range(self.width):
             for col in range(self.height):
                 image = self.map.get_tile_image(row, col, 0)
-                screen.blit(image, (row * self.tile_size, col * self.tile_size))
+                screen.blit(image, (row * self.tile_size + dx, col * self.tile_size + dy))
 
     def get_tile_id(self, position):
         return self.map.tiledgidmap(self.map.get_tile_gid(*position, 0))
