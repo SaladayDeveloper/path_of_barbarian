@@ -16,13 +16,16 @@ class Barbarian(pygame.sprite.Sprite):
         super().__init__(*group)
         self.image = Barbarian.image
         self.rect = self.image.get_rect()
-        self.rect.x = 500
-        self.rect.y = 500
+        self.rect.x = 0
+        self.rect.y = 0
         self.speed_x = self.speed_y = 0
+        self.old_coord = [0, 0]
 
     def update(self):
-        self.rect.x += self.speed_x
-        self.rect.y += self.speed_y
+        self.old_coord[0] += self.speed_x
+        self.old_coord[1] += self.speed_y
+        self.rect.x = self.old_coord[0]
+        self.rect.y = self.old_coord[1]
 
     def move(self, keys, speed):
         if keys == pygame.K_a:
